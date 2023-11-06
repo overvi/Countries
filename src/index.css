@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+strong {
+    font-weight: 700;
+}
+
+option ,select{
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.flow-content > * + * {
+    margin-top: var(--spacer , 0.6rem);
+}
+
+.badge-wrap > * {
+    display: inline-block;
+    margin-right: 1rem;
+}
