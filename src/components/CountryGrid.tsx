@@ -1,18 +1,14 @@
 import { SimpleGrid } from "@chakra-ui/react";
-import { useNavigate } from "react-router";
 import useCountry from "../hooks/useCountry";
 import CountryCards from "./CountryCards";
 import SkeletonLoading from "./SkeletonLoading";
-import { useEffect } from "react";
+import NotFound from "./notfound";
 
 const CountryGrid = () => {
-  const { data, error, isLoading } = useCountry();
+  const { data, isLoading, error } = useCountry();
   const skeletons = [1, 2, 3, 4, 5, 6];
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (error) navigate("/notfound");
-  });
+  if (error) return <NotFound />;
   return (
     <SimpleGrid
       columns={[1, 2, 3, 4]}

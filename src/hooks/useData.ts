@@ -5,7 +5,8 @@ const useData = <T>(endpoint : string ,  deps? : string[]) => {
         queryKey : deps || [],
         
         queryFn : () => axiosInstance.get<T[]>(endpoint).then(res => res.data),
-        retry : false
+        retry : false,
+        staleTime : 24 * 60 * 60
     })
 }
 

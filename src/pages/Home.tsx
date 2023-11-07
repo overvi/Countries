@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <SimpleGrid justifyContent="center">
+      <SimpleGrid className="mx-auto max-w-[80rem]">
         <Flex
           flexWrap={{ md: "nowrap", base: "wrap" }}
-          className="justify-between items-center pb-8"
+          className="justify-between items-center w-full pb-8 mx-auto"
         >
           <SearchInput />
           <Filtering />

@@ -15,7 +15,7 @@ const useSearch = create<Props>(set => ({
     api : 'all',
     searchText : '',
     
-    reset : () => set({api : '/all' , searchText : '' , region : ''}),
+    reset : () => set({api : '/all' , searchText : ''}),
 
     setSearchText : (searchText : string) => set({searchText : searchText , api : `name/${searchText}`}),
 

@@ -12,10 +12,8 @@ import useSearch from "../zustand/useSearch";
 import { grayColor } from "../helpers/bgColor";
 
 const Filtering = () => {
-  const { error } = useCountry();
   const { setRegion, region } = useSearch();
 
-  if (error) return;
   return (
     <Box>
       <Menu closeOnSelect={false}>

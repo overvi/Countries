@@ -6,7 +6,7 @@ import useSearch from "../zustand/useSearch";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
-  const { setSearchText } = useSearch();
+  const { setSearchText, reset } = useSearch();
   return (
     <form
       className="py-10 w-full"
@@ -30,6 +30,9 @@ const SearchInput = () => {
             type="tel"
             placeholder="Search For Country .."
             focusBorderColor="#fff"
+            onChange={(event) => {
+              if (!event.target.value) reset();
+            }}
           />
         </InputGroup>
       </Flex>
