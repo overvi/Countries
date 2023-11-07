@@ -6,14 +6,16 @@ const NotFound = () => {
 
   console.log(searchText);
   return (
-    <Stack spacing={3}>
-      <Alert status="error">
-        <AlertIcon />
-        <Text className="font-semibold">
-          can not find any results for "{searchText}"
-        </Text>
-      </Alert>
-    </Stack>
+    <>
+      <Stack spacing={3}>
+        <Alert status="error">
+          <AlertIcon />
+          <Text className="font-semibold">
+            can not find any results for "{searchText}"
+          </Text>
+        </Alert>
+      </Stack>
+    </>
   );
 };
 

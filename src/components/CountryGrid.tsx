@@ -2,7 +2,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import useCountry from "../hooks/useCountry";
 import CountryCards from "./CountryCards";
 import SkeletonLoading from "./SkeletonLoading";
-import NotFound from "./notfound";
+import NotFound from "./NotFound";
 
 const CountryGrid = () => {
   const { data, isLoading, error } = useCountry();

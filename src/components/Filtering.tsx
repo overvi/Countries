@@ -7,9 +7,8 @@ import {
   MenuList,
   MenuOptionGroup,
 } from "@chakra-ui/react";
-import useCountry from "../hooks/useCountry";
-import useSearch from "../zustand/useSearch";
 import { grayColor } from "../helpers/bgColor";
+import useSearch from "../zustand/useSearch";
 
 const Filtering = () => {
   const { setRegion, region } = useSearch();

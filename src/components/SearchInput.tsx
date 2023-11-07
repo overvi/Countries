@@ -1,12 +1,21 @@
-import { Flex, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from "@chakra-ui/react";
 import { useRef } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { grayColor } from "../helpers/bgColor";
+import useCountry from "../hooks/useCountry";
 import useSearch from "../zustand/useSearch";
 
 const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
   const { setSearchText, reset } = useSearch();
+  const { error } = useCountry();
   return (
     <form
       className="py-10 w-full"
@@ -30,12 +39,16 @@ const SearchInput = () => {
             type="tel"
             placeholder="Search For Country .."
             focusBorderColor="#fff"
-            onChange={(event) => {
-              if (!event.target.value) reset();
-            }}
           />
         </InputGroup>
       </Flex>
+      <Box className="pt-5">
+        {error && (
+          <Button onClick={() => reset()} colorScheme="blue">
+            All Countries
+          </Button>
+        )}
+      </Box>
     </form>
   );
 };
