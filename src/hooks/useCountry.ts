@@ -8,7 +8,7 @@ const useCountry = () => {
 }
 
 export const useDetails = (name : string) => {
-    return useData<Country>(`name/${name}` || '')
+    return useData<Country>(`name/${name}` || '' , [name])
 }
 
 export default useCountry
